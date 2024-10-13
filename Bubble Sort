@@ -1,0 +1,30 @@
+import java.util.*;
+public class ProblemSolverHub {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] nums = new int[n];
+        for (int i = 0; i < n; i++) {
+            nums[i] = sc.nextInt();
+        }
+        LeetCode obj = new LeetCode();
+        obj.BubbleSort(nums, n);
+        System.out.print("After Bubble Sort: ");
+        for (int i = 0; i < n; i++) {
+            System.out.print(nums[i] + " ");
+        }
+    }
+
+    public static void BubbleSort(int[] nums, int n) {
+        // Bubble Sort logic
+        for (int i = n - 1; i >= 0; i--) {
+            for (int j = 0; j < i; j++) {
+                if (nums[j] > nums[j + 1]) {  // Swap only if current is greater than next
+                    int temp = nums[j];
+                    nums[j] = nums[j + 1];
+                    nums[j + 1] = temp;
+                }
+            }
+        }
+    }
+}
